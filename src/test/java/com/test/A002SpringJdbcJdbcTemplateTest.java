@@ -66,6 +66,7 @@ public class A002SpringJdbcJdbcTemplateTest {
   public void simpleMapperTest() {
     String sql = "select * from user";
     List<User> users = jdbcTemplate.query(sql, new RowMapper<User>() {
+      @Override
       public User mapRow(ResultSet rs, int rowNum) throws SQLException {
         User user = new User();
         // Long id = rs.getLong("id");// 如果id为null,会默认0
@@ -86,6 +87,7 @@ public class A002SpringJdbcJdbcTemplateTest {
     // String sql = "insert into user (user_name,password) VALUES (?, ?)";
     // jdbcTemplate.update(sql, "赵孤鸿", "123456"); // 插入数据
     String userName = jdbcTemplate.execute(new CallableStatementCreator() {
+      @Override
       public CallableStatement createCallableStatement(Connection con) throws SQLException {
         String proc = "{call test(?,?)}";
         CallableStatement cs = con.prepareCall(proc);
@@ -94,6 +96,7 @@ public class A002SpringJdbcJdbcTemplateTest {
         return cs;
       }
     }, new CallableStatementCallback<String>() {
+      @Override
       public String doInCallableStatement(CallableStatement cs) throws SQLException, DataAccessException {
         cs.execute();
         return cs.getString(2);// 返回输出参数
@@ -105,7 +108,7 @@ public class A002SpringJdbcJdbcTemplateTest {
   @Test
   public void namedParameterJdbcTemplateTest() {
     String sql = "select * from user where id =:id";
-    Map<String, Object> parameters = new HashMap<String, Object>();
+    Map<String, Object> parameters = new HashMap<String, Object>(1);
     parameters.put("id", 1L);
     List<Map<String, Object>> users = namedParameterJdbcTemplate.queryForList(sql, parameters);
     System.out.println(users);
