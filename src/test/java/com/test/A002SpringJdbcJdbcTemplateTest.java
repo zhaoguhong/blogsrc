@@ -25,8 +25,9 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.zhaoguhong.blogsrc.entity.User;
 
-
 /**
+ * SpringJdbcJdbcTemplateTest
+ * 
  * @author zhaoguhong
  * @date 2017年11月29日
  */

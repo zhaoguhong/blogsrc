@@ -10,7 +10,12 @@ import org.junit.Test;
 
 import com.zhaoguhong.blogsrc.entity.User;
 
-
+/**
+ * 反射测试类
+ * 
+ * @author zhaoguhong
+ * @date 2017年12月14日
+ */
 
 public class A001ReflectTest {
   private static Logger logger = Logger.getLogger(A001ReflectTest.class);
