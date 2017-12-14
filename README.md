@@ -2,6 +2,7 @@
 
 [浅谈java反射机制](http://www.cnblogs.com/zhaoguhong/p/6937364.html)      `com.test.A001ReflectTest`
 [Spring JDBC（一）jdbcTemplate](http://www.cnblogs.com/zhaoguhong/p/7997873.html)      `com.test.A002SpringJdbcJdbcTemplateTest`
+[Spring JDBC（二）SimpleJdbcInsert](http://www.cnblogs.com/zhaoguhong/p/8036768.html)      `com.test.A003SpringJdbcSimpleJdbcInsertTest`
 
 
 
